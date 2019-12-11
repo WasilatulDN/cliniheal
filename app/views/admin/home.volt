@@ -14,7 +14,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('posyandu/logout') }}">
+                        <a href="{{ url('user/logout') }}">
                             Logout
                         </a>
                     </li>
@@ -56,6 +56,14 @@
                         labelField: "name",
                         label: "Selesai",
                         urlPrefix: "{{ url('admin/update-antrian/') }}",
+
+                    }
+                },
+                {
+                    title: "Hapus", field: "link", formatter: "link", formatterParams: {
+                        labelField: "name",
+                        label: "Hapus",
+                        urlPrefix: "{{ url('admin/delete-antrian/') }}",
 
                     }
                 },

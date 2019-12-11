@@ -14,7 +14,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('posyandu/logout') }}">
+                        <a href="{{ url('user/logout') }}">
                             Logout
                         </a>
                     </li>

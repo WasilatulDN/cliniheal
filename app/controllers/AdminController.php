@@ -78,6 +78,18 @@ class AdminController extends Controller
     {
         $antrian = Antrian::findFirst("idAntrian='$id'");
 
+        $antrian->status="selesai";
+
+        $antrian->save();
+
+        $this->response->redirect('admin/home');   
+
+    }
+
+    public function deleteAntrianAction($id)
+    {
+        $antrian = Antrian::findFirst("idAntrian='$id'");
+
         $antrian->delete();
 
         $this->response->redirect('admin/home');   

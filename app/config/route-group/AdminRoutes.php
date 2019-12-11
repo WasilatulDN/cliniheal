@@ -55,6 +55,13 @@ class AdminRoutes extends RouterGroup
         );
 
         $this->addGet(
+            '/delete-antrian/{id}',
+            [
+                'action' => 'deleteAntrian',
+            ]
+        );
+
+        $this->addGet(
             '/daftar-pasien',
             [
                 'action' => 'daftarPasien',
