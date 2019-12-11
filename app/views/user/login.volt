@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="full-page" style="background: #f98cff">
+    <div>{{flashSession.output()}}</div>
     <div class="login-form">
         <form action="{{ url("user/login") }}" method="post">
             <h1 style="text-align: center">Silakan Masuk</h1>

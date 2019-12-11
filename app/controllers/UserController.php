@@ -4,8 +4,9 @@ use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Dispatcher;
 use App\Validation\UserValidation;
+use App\Events\UserProtectController;
 
-class UserController extends Controller
+class UserController extends UserProtectController
 {
     
     public function createAction()

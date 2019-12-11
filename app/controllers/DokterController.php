@@ -4,7 +4,7 @@ use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 use App\Events\DokterProtectController;
 
-class DokterController extends Controller
+class DokterController extends DokterProtectController
 {
     public function homeAction()
     {

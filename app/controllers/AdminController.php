@@ -6,7 +6,7 @@ use Phalcon\Mvc\Dispatcher;
 use App\Validation\PasienValidation;
 use App\Events\AdminProtectController;
 
-class AdminController extends Controller
+class AdminController extends AdminProtectController
 {
     public function homeAction()
     {
