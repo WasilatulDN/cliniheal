@@ -21,17 +21,6 @@ $di->set(
             new AdminRoutes()
         );
 
-        $router->mount(
-            new IbuRoutes()
-        );
-        $router->mount(
-            new PosyanduRoutes()
-        );
-
-        $router->mount(
-            new KmsRoutes()
-        );
-
         $router->addGet(
             '/',
             [

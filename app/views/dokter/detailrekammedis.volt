@@ -31,6 +31,7 @@
         obyektif : {{rm.obyektif}} <br>
         diagnosis : {{rm.diagnosis}} <br>
         prognosis : {{rm.prognosis}} <br>
+        resep : {{resep.resep}}
     </div>
 
        

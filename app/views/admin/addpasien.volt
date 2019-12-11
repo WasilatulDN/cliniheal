@@ -29,27 +29,33 @@
             <div class="form-group">
                 <label for="namaPasien">Nama Pasien</label><br>
                 <input class="form-control" type="text" name="namaPasien" id="namaPasien">
+                <p>{{messages['namaPasien']}}</p>
             </div>
             <div class="form-group">
                 <label for="tgllahir">Tanggal Lahir</label><br>
                 <input type="date" name="tgllahir" id="tgllahir">
+                <p>{{messages['tgllahir']}}</p>
             </div>
             <div class="form-group">
                 <label for="jkel">Jenis Kelamin</label><br>
                 <input type="radio" name="jkel" value="Laki-laki"> Laki-laki
                 <input type="radio" name="jkel" value="Perempuan"> Perempuan
+                <p>{{messages['jkel']}}</p>
             </div>
              <div class="form-group">
                 <label for="alamat">Alamat</label><br>
                 <input type="text" name="alamat" id="alamat">
+                <p>{{messages['alamat']}}</p>
             </div>
              <div class="form-group">
                 <label for="telepon">Telepon</label><br>
                 <input type="text" name="telepon" id="telepon">
+                <p>{{messages['telepon']}}</p>
             </div>
              <div class="form-group">
                 <label for="nik">NIK</label><br>
                 <input type="text" name="nik" id="nik">
+                <p>{{messages['nik']}}</p>
             </div>
 
             <input class="log-btn" type="submit" value="Tambah">

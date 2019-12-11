@@ -2,13 +2,15 @@
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
+use Phalcon\Mvc\Dispatcher;
+use App\Validation\UserValidation;
 
 class UserController extends Controller
 {
     
     public function createAction()
     {
-
+		$this->view->messages = $this->messages;
     }
 
 
@@ -25,9 +27,19 @@ class UserController extends Controller
             $password = $this->request->getPost('password');
             $dokter->password = $this->security->hash($password);
 
-            $dokter->save();
-            $this->response->redirect();
+            $val = new UserValidation();
+            $messages = $val->validate($_POST);
 
+            if (count($messages)) {
+                foreach ($messages as $m) {
+                    $this->messages[$m->getField()] = $m;
+                }
+                $this->dispatcher->forward(['action'=>'create']);
+            }
+            else{
+                $dokter->save();
+                $this->response->redirect();
+            }
         }
         elseif($this->request->getPost('tipe') == "apoteker")
         {
@@ -39,9 +51,19 @@ class UserController extends Controller
             $password = $this->request->getPost('password');
             $apoteker->password = $this->security->hash($password);
 
-            $apoteker->save();
-            $this->response->redirect();
+            $val = new UserValidation();
+            $msg = $val->validate($_POST);
 
+            if(count($msg)){
+                foreach ($msg as $m){
+                    $this->messages[$m->getField()] = $m;
+                }
+                $this->dispatcher->forward(['action'=>'create']);
+            }
+            else{
+                $apoteker->save();
+                $this->response->redirect();
+            }
         }
         elseif($this->request->getPost('tipe') == "admin")
         {
@@ -52,9 +74,19 @@ class UserController extends Controller
             $password = $this->request->getPost('password');
             $admin->password = $this->security->hash($password);
 
-            $admin->save();
-            $this->response->redirect();
+            $val = new UserValidation();
+            $msg = $val->validate($_POST);
 
+            if(count($msg)){
+                foreach ($msg as $m){
+                    $this->messages[$m->getField()] = $m;
+                }
+                $this->dispatcher->forward(['action'=>'create']);
+            }
+            else{
+                $admin->save();
+                $this->response->redirect();
+            }
         }
         
     }
@@ -85,6 +117,9 @@ class UserController extends Controller
                     );
                     (new Response())->redirect('dokter/home')->send();
                 }
+                else{
+                    $this->response->redirect('user/login');
+                }
             }
             else{
                 $this->response->redirect('user/login');
@@ -107,6 +142,9 @@ class UserController extends Controller
                     );
                     (new Response())->redirect('apoteker/home')->send();
                 }
+                else{
+                    $this->response->redirect('user/login');
+                }
             }
             else{
                 $this->response->redirect('user/login');
@@ -128,6 +166,9 @@ class UserController extends Controller
                         ]
                     );
                     (new Response())->redirect('admin/home')->send();
+                }
+                else{
+                    $this->response->redirect('user/login');
                 }
             }
             else{

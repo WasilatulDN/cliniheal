@@ -19,20 +19,30 @@
                 <input type="username" name="username" id="username" class="form-control form-logres"
                        placeholder="Username">
                 <i class="fa fa-user"></i>
+                <p class="block-content nice-copy">{{messages['usernamessagese']}}</p>
             </div>
             <div class="form-group ">
                 <input type="nama" name="nama" id="nama" class="form-control form-logres"
                        placeholder="nama">
                 <i class="fa fa-user"></i>
+                <p class="block-content nice-copy">{{messages['nama']}}</p>
             </div>
             <div class="form-group ">
                 <input type="email" name="email" id="email" class="form-control form-logres" placeholder="Email">
                 <i class="fa fa-envelope"></i>
+                <p class="block-content nice-copy">{{messages['email']}}</p>
             </div>
             <div class="form-group log-status">
                 <input type="password" name="password" id="password" class="form-control form-logres"
                        placeholder="Kata Sandi">
                 <i class="fa fa-lock"></i>
+                <p class="block-content nice-copy">{{messages['password']}}</p>
+            </div>
+            <div class="form-group log-status">
+                <input type="password" name="password2" id="password2" class="form-control form-logres"
+                       placeholder="Konfirmasi Kata Sandi">
+                <i class="fa fa-lock"></i>
+                <p class="block-content nice-copy">{{messages['password2']}}</p>
             </div>
             <div class="form-group log-status">
                 <input type="text" name="str" id="str" class="form-control form-logres"
@@ -50,7 +60,7 @@
         </form>
         <p>
             Sudah terdaftar?<br>
-            <a class="link" href="{{ url("ibu/login") }}"> Masuk disini </a>
+            <a class="link" href="{{ url("user/login") }}"> Masuk disini </a>
         </p>
 
     </div>

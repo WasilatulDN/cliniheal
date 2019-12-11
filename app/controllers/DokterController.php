@@ -98,7 +98,8 @@ class DokterController extends Controller
     {
         $rekammedis = Rekammedis::findFirst("idRekamMedis='$idp'");
         $this->view->rm = $rekammedis;
-
+        $resep = Resep::findFirst("idRekamMedis='$idp'");
+        $this->view->resep = $resep;
     }
 
 }

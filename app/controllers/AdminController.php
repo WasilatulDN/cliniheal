@@ -2,6 +2,8 @@
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
+use Phalcon\Mvc\Dispatcher;
+use App\Validation\PasienValidation;
 
 class AdminController extends Controller
 {
@@ -56,7 +58,7 @@ class AdminController extends Controller
 
     public function addPasienAction()
     {
-
+        $this->view->messages = $this->messages;
     }
 
     public function storePasienAction()
@@ -69,8 +71,19 @@ class AdminController extends Controller
         $pasien->tlp = $this->request->getPost('telepon');
         $pasien->nik = $this->request->getPost('nik');
 
-        $pasien->save();
-        $this->response->redirect('admin/home-antrian');
+        $val = new PasienValidation();
+        $messages = $val->validate($_POST);
+
+        if (count($messages)) {
+            foreach ($messages as $m) {
+                $this->messages[$m->getField()] = $m;
+            }
+            $this->dispatcher->forward(['action'=>'addPasien']);
+        }
+        else{
+            $dokter->save();
+            $this->response->redirect('admin/list-antrian');
+        }
 
     }
 

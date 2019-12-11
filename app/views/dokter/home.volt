@@ -49,7 +49,7 @@
                     {title: "Jenis Kelamin", field: "jkel"},
                     {title: "Tanggal Lahir", field: "tgllahir"},
                      {
-                    title: "Selesai", field: "link", formatter: "link", formatterParams: {
+                    title: "Aksi", field: "link", formatter: "link", formatterParams: {
                         labelField: "name",
                         label: "Buat Rekam Medis",
                         urlPrefix: "{{ url('dokter/create-rekam-medis/') }}",
