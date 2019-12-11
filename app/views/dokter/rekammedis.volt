@@ -25,6 +25,7 @@
         </div>
     </div>
     <div class="home-content">
+        <div>{{flashSession.output()}}</div>
     <h2 class="dashboard-title">Daftar Rekam Medis</h2>
                 <div id="daftar-rekam-medis"></div>
             </div>

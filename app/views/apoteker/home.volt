@@ -25,6 +25,7 @@
         </div>
     </div>
     <div class="home-content">
+        <div>{{flashSession.output()}}</div>
         <div class="dok-hello">
             <h1 style="padding: 0px 5px">
             ini halaman apoteker <br>

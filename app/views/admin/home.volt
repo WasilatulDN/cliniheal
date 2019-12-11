@@ -24,6 +24,7 @@
     </div>
 
     <div class="home-content">
+        <div>{{flashSession.output()}}</div>
             <div class="dok-hello">
             <h1 style="padding: 0px 5px">
             ini halaman admin <br>
@@ -38,7 +39,7 @@
                     <input type="text" name="nik" id="nik" style="padding: 5%">
                 </div>
                 <div class="input-group-back">
-                    <input type="submit" value="Tambah">
+                    <button type="submit">Tambah</button>
                 </div>
             </div>
         </form>

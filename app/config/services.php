@@ -1,5 +1,7 @@
 <?php
 
+use Phalcon\Security;
+use Phalcon\Flash\Session as FlashSession;
 /*
  * Fungsi pemanggilan Volt service
  */
@@ -77,5 +79,39 @@ $di->set(
         $session->start();
 
         return $session;
+    }
+);
+
+/*
+ * Fungsi security service
+ */
+$di->set(
+    'security',
+    function () {
+        $security = new Security();
+
+        $security->setWorkFactor(12);
+
+        return $security;
+    },
+    true
+);
+
+/*
+ * Fungsi flash messages service
+ */
+$di->set(
+    'flashSession',
+    function () {
+        $flashSession = new FlashSession(
+            [
+                'error'   => 'alert alert-danger',
+                'success' => 'alert alert-success',
+                'notice'  => 'alert alert-info',
+                'warning' => 'alert alert-warning',
+            ]
+        );
+
+        return $flashSession;
     }
 );

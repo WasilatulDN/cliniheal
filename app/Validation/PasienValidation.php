@@ -32,7 +32,7 @@ class PasienValidation extends Validation
         'jkel',
         new PresenceOf(
             [
-                'message' => 'The tanggal lahir is required',
+                'message' => 'The jenis kelamin is required',
             ]
         )
     );
@@ -69,7 +69,7 @@ class PasienValidation extends Validation
         'telepon',
         new Regex(
             [
-                'pattern' => '[0-9]{9,13}',
+                'pattern' => '/[0-9]{9,13}/',
                 'message' => 'The telephone is not valid',
             ]
         )
@@ -88,7 +88,7 @@ class PasienValidation extends Validation
         'nik',
         new Regex(
             [
-                'pattern' => '[0-9]{16}',
+                'pattern' => '/[0-9]{16}/',
                 'message' => 'The NIK is not valid',
             ]
         )

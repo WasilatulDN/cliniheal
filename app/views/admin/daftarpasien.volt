@@ -24,7 +24,7 @@
     </div>
 
     <div class="home-content">
-
+        <div>{{flashSession.output()}}</div>
         <div class="home-content">
             <h2 class="dashboard-title">Daftar Pasien</h2>
             <div id="daftar-pasien"></div>

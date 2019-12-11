@@ -36,7 +36,6 @@ class DokterController extends Controller
     {
         $pasien = Pasien::findFirst("idPasien='$idp'");
         $this->view->pasien = $pasien;
-
     }
 
     public function storeRekamMedisAction()
@@ -51,8 +50,6 @@ class DokterController extends Controller
         $rekammedis->prognosis = $this->request->getPost('prognosis');
         $rekammedis->obyektif = $this->request->getPost('obyektif');
 
-        $rekammedis->save();
-
         $max = Rekammedis::maximum(
             [
                 'column' => 'idRekamMedis',
@@ -60,12 +57,23 @@ class DokterController extends Controller
         );
 
         $resep = new Resep();
-        $resep->idRekamMedis = $max;
+        $resep->idRekamMedis = $max+1;
         $resep->resep = $this->request->getPost('resep');
         $resep->status = 1;
-        $resep->save();
-        $this->response->redirect('dokter/home');
-
+        if($rekammedis->save()){
+            if($resep->save()){
+                $this->flashSession->success('Berhasil menambah rekam medis');
+                return $this->response->redirect('dokter/rekam-medis');
+            }
+            else{
+                $this->flashSession->error('Gagal menambah rekam medis');
+                return $this->response->redirect('dokter/home');
+            }
+        }
+        else{
+            $this->flashSession->error('Gagal menambah rekam medis');
+            return $this->response->redirect('dokter/home');
+        }
     }
 
     public function RekamMedisAction()

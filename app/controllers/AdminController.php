@@ -33,10 +33,7 @@ class AdminController extends Controller
                         'status' => $status,
                         'link' => $antrian->idAntrian,
                     );
-                    // var_dump($data); die();
-
             }
-            
             $content = json_encode($data);
             return $this->response->setContent($content);
     }
@@ -46,14 +43,20 @@ class AdminController extends Controller
         $nik = $this->request->getPost('nik');
         $pasien = Pasien::findFirst("nik='$nik'");
         
-        $antrian = new Antrian();
-        $antrian->idPasien = $pasien->idPasien;
-        $antrian->status = 1;
+        if($pasien){
+            $antrian = new Antrian();
+            $antrian->idPasien = $pasien->idPasien;
+            $antrian->status = 1;
 
-        $antrian->save();
-        $this->response->redirect('admin/home');
-
-        
+            if($antrian->save()){
+                $this->flashSession->success('Berhasil menambahkan antrian');
+                return $this->response->redirect('admin/home');
+            }
+        }
+        else{
+            $this->flashSession->error('NIK tidak ditemukan');
+            return $this->response->redirect('admin/home');
+        }
     }
 
     public function addPasienAction()
@@ -81,32 +84,35 @@ class AdminController extends Controller
             $this->dispatcher->forward(['action'=>'addPasien']);
         }
         else{
-            $dokter->save();
-            $this->response->redirect('admin/list-antrian');
+            $pasien->save();
+            $this->flashSession->success('Berhasil menambahkan pasien baru');
+            return $this->response->redirect('admin/daftar-pasien');
         }
-
     }
 
     public function updateAntrianAction($id)
     {
         $antrian = Antrian::findFirst("idAntrian='$id'");
 
-        $antrian->status=2;
+        if($antrian){
+            $antrian->status=2;
 
-        $antrian->save();
-
-        $this->response->redirect('admin/home');   
-
+            if($antrian->save()){
+                $this->flashSession->success('Berhasil mengupdate antrian');
+                return $this->response->redirect('admin/home');
+            }  
+        }
     }
 
     public function deleteAntrianAction($id)
     {
         $antrian = Antrian::findFirst("idAntrian='$id'");
-
-        $antrian->delete();
-
-        $this->response->redirect('admin/home');   
-
+        if($antrian){
+            if($antrian->delete()){
+                $this->flashSession->success('Berhasil menghapus antrian');
+                return $this->response->redirect('admin/home');
+            }
+        }
     }
 
     public function daftarPasienAction()

@@ -33,8 +33,6 @@ class ApotekerController extends Controller
                         'status' => $status,
                         'link' => $resep->idResep,
                     );
-                    // var_dump($data); die();
-
             }
             
             $content = json_encode($data);
@@ -45,9 +43,13 @@ class ApotekerController extends Controller
     public function updateResepAction($id)
     {
         $resep = Resep::findFirst("idResep='$id'");
-        $resep->status = 2;
-        $resep->save();
-        $this->response->redirect('apoteker/home');
+        if($resep){
+            $resep->status = 2;
+            if($resep->save()){
+                $this->flashSession->success('Berhasil mengupdate antrian');
+                return $this->response->redirect('apoteker/home');
+            }
+        }
     }
 
 }
