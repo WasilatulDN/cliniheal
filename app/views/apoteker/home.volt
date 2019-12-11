@@ -1,4 +1,4 @@
-{% extends "dashboard/baseibu.volt" %}
+{% extends "dashboard/baseapoteker.volt" %}
 
 {% block title %}Beranda{% endblock %}
 
@@ -32,36 +32,32 @@
                 
             </h1>
         </div>
-
-    </div>
-    <script>
-        var table = new Tabulator("#daftar-kms", {
-            height: "311px",
-            layout: "fitColumns",
-            placeholder: "Tidak Ada KMS",
-            columns: [
-                {title: "No", field: "no", formatter: "rownum", width: 10},
-                {title: "Nama", field: "nama"},
-                {title: "Tanggal", field: "tanggal"},
-                // {title: "Tanggal Lahir", field: "tglLahir"},
-                {
-                    title: "Lihat", field: "link", formatter: "link", formatterParams: {
+        <h2 class="dashboard-title">Daftar Resep</h2>
+        <div id="daftar-resep"></div>
+        </div>
+        </div>
+        <script>
+            var table = new Tabulator("#daftar-resep", {
+                height: "311px",
+                layout: "fitColumns",
+                placeholder: "Tidak Ada Resep",
+                columns: [
+                    {title: "No", field: "no", formatter: "rownum", width: 10},
+                    {title: "Tanggal", field: "tanggal"},
+                    {title: "Nama", field: "nama"},
+                    {title: "Alamat", field: "alamat"},
+                    {title: "Resep", field: "resep"},
+                    {title: "Status", field: "status"},
+                     {
+                    title: "Selesai", field: "link", formatter: "link", formatterParams: {
                         labelField: "name",
-                        label: "Lihat",
-                        urlPrefix: "{{ url('ibu/detail-kms/') }}",
-                        target: "_blank",
+                        label: "Selesai",
+                        urlPrefix: "{{ url('apoteker/update-resep/') }}",
+
                     }
                 },
-                // {
-                //     title: "Hapus", field: "link", formatter: "link", formatterParams: {
-                //         labelField: "name",
-                //         label: "Hapus",
-                //         urlPrefix: "{{ url('dokter/hapuspasien/') }}",
-                //         // target: "_blank",
-                //     }
-                // }
-            ],
-        });
-        table.setData("{{ url('ibu/list-kms') }}");
-    </script>
+                ],
+            });
+            table.setData("{{ url('apoteker/list-resep') }}");
+        </script>
 {% endblock %}

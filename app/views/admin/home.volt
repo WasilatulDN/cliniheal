@@ -24,6 +24,13 @@
     </div>
 
     <div class="home-content">
+            <div class="dok-hello">
+            <h1 style="padding: 0px 5px">
+            ini halaman admin <br>
+                Hallo, {{ session.get('auth')['username'] }}!
+                
+            </h1>
+        </div>
         <form action="{{ url("admin/search-pasien") }}" method="post">
             <h3>Masukkan NIK </h3>
             <div class="input-group">

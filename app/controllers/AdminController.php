@@ -78,7 +78,7 @@ class AdminController extends Controller
     {
         $antrian = Antrian::findFirst("idAntrian='$id'");
 
-        $antrian->status="selesai";
+        $antrian->status=2;
 
         $antrian->save();
 

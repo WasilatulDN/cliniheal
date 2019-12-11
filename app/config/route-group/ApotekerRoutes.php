@@ -18,6 +18,20 @@ class ApotekerRoutes extends RouterGroup
                 'action' => 'home',
             ]
         );
+
+        $this->addGet(
+            '/list-resep',
+            [
+                'action' => 'listResep',
+            ]
+        );
+
+        $this->addGet(
+            '/update-resep/{id}',
+            [
+                'action' => 'updateResep',
+            ]
+        );
         
     }
 }

@@ -25,39 +25,29 @@
         </div>
     </div>
     <div class="home-content">
-        <div class="dok-hello">
-            <h1 style="padding: 0px 5px">
-            ini halaman dokter <br>
-                Hallo, {{ session.get('auth')['username'] }}!
-                
-            </h1>
-        </div>
-    <h2 class="dashboard-title">Daftar Pasien</h2>
-                <div id="daftar-pasien"></div>
+    <h2 class="dashboard-title">Daftar Rekam Medis</h2>
+                <div id="daftar-rekam-medis"></div>
             </div>
         </div>
         <script>
-            var table = new Tabulator("#daftar-pasien", {
+            var table = new Tabulator("#daftar-rekam-medis", {
                 height: "311px",
                 layout: "fitColumns",
-                placeholder: "Tidak Ada Pasien",
+                placeholder: "Tidak Ada Rekam Medis",
                 columns: [
                     {title: "No", field: "no", formatter: "rownum", width: 10},
-                    {title: "NIK", field: "nik"},
+                    {title: "Tanggal", field: "tanggal"},
                     {title: "Nama", field: "nama"},
-                    {title: "Alamat", field: "alamat"},
-                    {title: "Jenis Kelamin", field: "jkel"},
-                    {title: "Tanggal Lahir", field: "tgllahir"},
                      {
-                    title: "Selesai", field: "link", formatter: "link", formatterParams: {
+                    title: "Detail", field: "link", formatter: "link", formatterParams: {
                         labelField: "name",
-                        label: "Buat Rekam Medis",
-                        urlPrefix: "{{ url('dokter/create-rekam-medis/') }}",
+                        label: "Detail Rekam Medis",
+                        urlPrefix: "{{ url('dokter/detail-rekam-medis/') }}",
 
                     }
                 },
                 ],
             });
-            table.setData("{{ url('dokter/list-pasien') }}");
+            table.setData("{{ url('dokter/list-rekam-medis') }}");
         </script>
 {% endblock %}
