@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="side-header">
         <a href="{{ url('') }}">
-            <img src="{{ url('img/posiana-pjg.png') }}" style="width: 100%">
+            <img src="{{ url('img/Cliniheal-stretch.png') }}" style="width: 100%">
         </a>
     </div>
     <div class="side-menu">

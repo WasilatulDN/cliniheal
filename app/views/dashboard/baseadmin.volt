@@ -2,7 +2,7 @@
 <html>
 <head>
     {% include 'dashboard/header.volt' %}
-    <title>{% block title %}{% endblock %} - Posiana</title>
+    <title>{% block title %}{% endblock %} - Cliniheal</title>
 </head>
 <body>
 {% include 'dashboard/navbar.volt' %}

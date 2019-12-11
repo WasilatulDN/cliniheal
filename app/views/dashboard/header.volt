@@ -6,7 +6,7 @@
 <link href="{{ url("css/bootstrap.min.css") }}" rel="stylesheet">
 <link href="{{ url("css/style.css") }}" rel="stylesheet">
 <script src="{{ url("js/tabulator.min.js") }}"></script>
-{% if session.get('auth')['tipe']==1 %}
+{% if session.get('dokter') %}
     <link href="{{ url("css/dokter.css") }}" rel="stylesheet">
 {% else %}
     <link href="{{ url("css/pasien.css") }}" rel="stylesheet">

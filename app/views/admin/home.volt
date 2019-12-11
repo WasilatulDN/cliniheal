@@ -1,6 +1,6 @@
 {% extends "dashboard/baseadmin.volt" %}
 
-{% block title %}Tambah Data Anak{% endblock %}
+{% block title %}Antrian{% endblock %}
 
 {% block content %}
     <div class="dashboard-header" align="right">
@@ -28,7 +28,7 @@
             <div class="dok-hello">
             <h1 style="padding: 0px 5px">
             ini halaman admin <br>
-                Hallo, {{ session.get('auth')['username'] }}!
+                Hallo, {{ session.get('admin')['username'] }}!
                 
             </h1>
         </div>

@@ -13,7 +13,8 @@ $loader->registerDirs(
 
 $loader->registerNamespaces(
 	[
-		'App\Validation' => APP_PATH . '/Validation/',
+        'App\Validation' => APP_PATH . '/Validation/',
+		'App\Events' => APP_PATH . '/Events/',
 	]
 );
 

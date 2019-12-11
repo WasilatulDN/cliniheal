@@ -1,6 +1,6 @@
 {% extends "dashboard/baseapoteker.volt" %}
 
-{% block title %}Beranda{% endblock %}
+{% block title %}Daftar Resep{% endblock %}
 
 {% block content %}
     <div class="dashboard-header" align="right">
@@ -29,7 +29,7 @@
         <div class="dok-hello">
             <h1 style="padding: 0px 5px">
             ini halaman apoteker <br>
-                Hallo, {{ session.get('auth')['username'] }}!
+                Hallo, {{ session.get('apoteker')['username'] }}!
                 
             </h1>
         </div>

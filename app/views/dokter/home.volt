@@ -29,7 +29,7 @@
         <div class="dok-hello">
             <h1 style="padding: 0px 5px">
             ini halaman dokter <br>
-                Hallo, {{ session.get('auth')['username'] }}!
+                Hallo, {{ session.get('dokter')['username'] }}!
                 
             </h1>
         </div>

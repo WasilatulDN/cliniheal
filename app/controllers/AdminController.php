@@ -4,6 +4,7 @@ use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Dispatcher;
 use App\Validation\PasienValidation;
+use App\Events\AdminProtectController;
 
 class AdminController extends Controller
 {

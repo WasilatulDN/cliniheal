@@ -2,6 +2,7 @@
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
+use App\Events\DokterProtectController;
 
 class DokterController extends Controller
 {
@@ -41,7 +42,7 @@ class DokterController extends Controller
     public function storeRekamMedisAction()
     {
         $rekammedis = new Rekammedis();
-        $rekammedis->idDokter = $this->session->get('auth')['id'];
+        $rekammedis->idDokter = $this->session->get('dokter')['id'];
         $rekammedis->idPasien = $this->request->getPost('idPasien');
         $rekammedis->tanggal = $this->request->getPost('tanggal');
         $rekammedis->keluhan = $this->request->getPost('keluhan');
@@ -83,7 +84,7 @@ class DokterController extends Controller
 
     public function listRekamMedisAction()
     {
-        $id = $this->session->get('auth')['id'];
+        $id = $this->session->get('dokter')['id'];
         $rms = Rekammedis::find("idDokter='$id'");
         $data = array();
         

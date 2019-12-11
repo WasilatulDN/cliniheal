@@ -1,6 +1,6 @@
 {% extends "dashboard/baseadmin.volt" %}
 
-{% block title %}Tambah Data Anak{% endblock %}
+{% block title %}Daftar Pasien{% endblock %}
 
 {% block content %}
     <div class="dashboard-header" align="right">

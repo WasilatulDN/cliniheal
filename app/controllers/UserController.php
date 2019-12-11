@@ -108,7 +108,7 @@ class UserController extends Controller
             if ($user) {
                 if ($this->security->checkHash($password, $user->password)) {
                     $this->session->set(
-                        'auth',
+                        'dokter',
                         [
                             'id' => $user->idDokter,
                             'username' => $user->username,
@@ -133,7 +133,7 @@ class UserController extends Controller
             if ($user) {
                 if ($this->security->checkHash($password, $user->password)) {
                     $this->session->set(
-                        'auth',
+                        'apoteker',
                         [
                             'id' => $user->idApoteker,
                             'username' => $user->username,
@@ -158,7 +158,7 @@ class UserController extends Controller
             if ($user) {
                 if ($this->security->checkHash($password, $user->password)) {
                     $this->session->set(
-                        'auth',
+                        'admin',
                         [
                             'id' => $user->idAdmin,
                             'username' => $user->username,

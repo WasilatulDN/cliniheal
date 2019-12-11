@@ -2,6 +2,7 @@
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
+use App\Events\ApotekerProtectController;
 
 class ApotekerController extends Controller
 {
