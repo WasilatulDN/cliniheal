@@ -6,6 +6,22 @@ $di->set(
         $router = new \Phalcon\Mvc\Router(false);
 
         $router->mount(
+            new UserRoutes()
+        );
+
+        $router->mount(
+            new DokterRoutes()
+        );
+
+        $router->mount(
+            new ApotekerRoutes()
+        );
+
+        $router->mount(
+            new AdminRoutes()
+        );
+
+        $router->mount(
             new IbuRoutes()
         );
         $router->mount(
