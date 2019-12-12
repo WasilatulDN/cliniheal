@@ -9,7 +9,7 @@
     <title>Cliniheal - Register Akun</title>
 </head>
 <body>
-<div class="full-page" style="background: #f98cff">
+<div class="full-page" style="background: rgb(0, 102, 204)">
         
     </div>
     <div class="login-form">

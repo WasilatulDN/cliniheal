@@ -9,7 +9,7 @@
     <title>Masuk - Cliniheal</title>
 </head>
 <body>
-<div class="full-page" style="background: #f98cff">
+<div class="full-page" style="background: rgb(0, 102, 204)">
     <div>{{flashSession.output()}}</div>
     <div class="login-form">
         <form action="{{ url("user/login") }}" method="post">

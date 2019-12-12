@@ -24,7 +24,7 @@ class UserValidation extends Validation
     $this->add(
         'username',
         new Regex([
-            'pattern' => '/[Az\S]/',
+            'pattern' => '/^[A-Za-z\S]+/',
             'message' => 'The username must be alphabet and has no whitespace'
         ])
     );

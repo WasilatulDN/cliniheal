@@ -1,4 +1,4 @@
 .form-control:focus, .form-control:focus + .svg-inline--fa.fa-w-14 {
-    border-color: rgb(236, 91, 255);
-    color: rgb(236, 91, 255);
+    border-color: rgb(0, 102, 204);
+    color: rgb(0, 102, 204);
 }

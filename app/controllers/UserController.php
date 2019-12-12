@@ -39,7 +39,7 @@ class UserController extends UserProtectController
             }
             else{
                 $dokter->save();
-                $this->response->redirect();
+                $this->response->redirect('user/login');
             }
         }
         elseif($this->request->getPost('tipe') == "apoteker")
@@ -63,7 +63,7 @@ class UserController extends UserProtectController
             }
             else{
                 $apoteker->save();
-                $this->response->redirect();
+                $this->response->redirect('user/login');
             }
         }
         elseif($this->request->getPost('tipe') == "admin")
@@ -86,7 +86,7 @@ class UserController extends UserProtectController
             }
             else{
                 $admin->save();
-                $this->response->redirect();
+                $this->response->redirect('user/login');
             }
         }
         

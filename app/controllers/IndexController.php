@@ -2,23 +2,19 @@
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
+use App\Events\UserProtectController;
 
-class IndexController extends Controller
+class IndexController extends UserProtectController
 {
-    public function indexAction()
-    {
-        $_isIbu = $this->session->get('auth')['tipe'];
-        if ($_isIbu == 1){
-            return $this->response->redirect('ibu/home');
-        }elseif($_isIbu == 2){
-            return $this->response->redirect('posyandu/home');
-        }
-    }
 
     public function show404Action()
     {
-
+        $this->view->pick('base/show404');
     }
-
+    
+    public function indexAction()
+    {
+        
+    }
 
 }
