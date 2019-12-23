@@ -6,31 +6,21 @@
     <div class="dropdown-container">
         <div class="nav-dropdown">
             <div class="nav-dropdown-btn">
-                <a href="">
+                <a href="user/login">
                     <i class="fas fa-user"></i>
-                    Ibu
+                    Login
                 </a>
             </div>
-            <div class="dropdown-item">
-                <ul>
-                    <li><a href="{{ url('ibu/register') }}">Daftar</a></li>
-                    <li><a href="{{ url('ibu/login') }}">Masuk</a></li>
-                </ul>
-            </div>
+            
         </div>
         <div class="nav-dropdown">
             <div class="nav-dropdown-btn">
-                <a href="">
-                    <i class="fas fa-user-md"></i>
-                    Posyandu
+                <a href="user/register">
+                    <i class="fas fa-user"></i>
+                    Register
                 </a>
             </div>
-            <div class="dropdown-item">
-                <ul>
-                    <li><a href="{{ url('posyandu/register') }}">Daftar</a></li>
-                    <li><a href="{{ url('posyandu/login') }}">Masuk</a></li>
-                </ul>
-            </div>
+            
         </div>
     </div>
 </nav>

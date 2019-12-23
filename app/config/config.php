@@ -9,9 +9,9 @@ return new Config([
         'host' => '127.0.0.1',
         'username' => 'root',
         'password' => '',
-        'dbname' => 'posiana'
+        'dbname' => 'cliniheal'
     ],
     'url' => [
-        'baseUrl' => 'http://localhost/posyandu/'
+        'baseUrl' => 'http://localhost/cliniheal/'
     ]
 ]);

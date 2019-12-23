@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url("img/favicon.ico") }}" type="image/x-icon"/>
     <link rel="shortcut icon" href="{{ url("img/favicon.ico") }}" type="image/x-icon"/>
-    <title>404 - Posiana</title>
+    <title>404 - Cliniheal</title>
     <style>
         html, body {
             margin: 0px;

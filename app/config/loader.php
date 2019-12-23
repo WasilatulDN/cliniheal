@@ -11,16 +11,11 @@ $loader->registerDirs(
     ]
 );
 
-$loader->registerClasses(
-    [
-        'PHPMailer'         => '/library/PHPMailer/PHPMailer.php',
-    ]
-);
-
 $loader->registerNamespaces(
-    [
-        'PHPMailer\PHPMailer' => APP_PATH . '/library/PHPMailer/'
-    ]
+	[
+        'App\Validation' => APP_PATH . '/Validation/',
+		'App\Events' => APP_PATH . '/Events/',
+	]
 );
 
 $loader->register();
